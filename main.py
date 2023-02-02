@@ -41,19 +41,23 @@ class MyWindow(QtWidgets.QMainWindow):
                 self.asset_list.addItem(self.list_item_name)
             con.close()
 
-            print(self.current_asset_number)
 
             if self.current_asset_number == 0:
                 self.asset_number_edit.setText(f'00001')
             if self.current_asset_number in range(1, 9):
+                self.current_asset_number += 1
                 self.asset_number_edit.setText(f'0000{str(self.current_asset_number)}')
             if self.current_asset_number in range(10, 99):
+                self.current_asset_number += 1
                 self.asset_number_edit.setText(f'000{str(self.current_asset_number)}')
             if self.current_asset_number in range(100, 999):
+                self.current_asset_number += 1
                 self.asset_number_edit.setText(f'00{str(self.current_asset_number)}')
             if self.current_asset_number in range(1000, 9999):
+                self.current_asset_number += 1
                 self.asset_number_edit.setText(f'0{str(self.current_asset_number)}')
             if self.current_asset_number in range(10000, 99999):
+                self.current_asset_number += 1
                 self.asset_number_edit.setText(f'{str(self.current_asset_number)}')
         else:
             pass
